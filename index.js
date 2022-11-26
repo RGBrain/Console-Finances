@@ -89,25 +89,15 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
-/* 
-Format of arrays:  
-['Jan-2010', 867884],
-['Feb-2010', 984655],
-...
-*/
-
-// TODO Calculate The total number of months included in the dataset.
+// Total number of months.
 let totalMonths = finances.length;
 
-// ? console.log(totalMonths);
-
-// TODO Calculate The net total amount of Profit/Losses over the entire period.
+// Total amount of Profit/Losses over the entire period.
 let totalProfit = 0;
-// Access values in array
-for (var i = 0; i++; i < finances.length) {
-    totalProfit = totalProfit + finances[i]
+for (var i = 0; i < finances.length; i++) {
+    currentMonth = finances[i];
+    totalProfit = totalProfit + currentMonth[1];
 }
-
 
 // Add them
 // totalProfit = totalProfit + finances[i]
