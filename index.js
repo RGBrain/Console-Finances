@@ -99,13 +99,34 @@ for (var i = 0; i < finances.length; i++) {
     totalProfit = totalProfit + currentMonth[1];
 }
 
-// TODO Calculate the average of the changes in Profit/Losses over the entire period.
+// Average of the changes in Profit/Losses over the entire period.
+var monthlyProfitVariance = [] 
 
+// Calculate monthly change and store in an Array 
+for (var i = 1; i < finances.length; i++) {
+    let currentMonthProfit = finances[i][1];
+    let previousMonthProfit = finances[i-1][1];
+    let monthlyChange = currentMonthProfit - previousMonthProfit;
+    monthlyProfitVariance[i]= monthlyChange;
+}
 
-// TODO track what the total change in profits are from month to month and then find the average. (Total/Number of months)
+// add initial value in index 0 (the difference between 0 and first value in array) 
+monthlyProfitVariance[0] = finances[0][1];
 
+// Sum all values in array
+let totalVariance = 0;
+for (j = 0; j < monthlyProfitVariance.length; j++ ) {
+    totalVariance += monthlyProfitVariance[j];
+}
+
+// Calculate average
+let averageVariance = totalVariance / 86;
+
+// console.log(averageVariance);
 
 // TODO Find The greatest increase in profits (date and amount) over the entire period.
+
+
 
 
 // TODO The greatest decrease in losses (date and amount) over the entire period.
