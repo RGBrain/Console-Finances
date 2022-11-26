@@ -99,11 +99,6 @@ for (var i = 0; i < finances.length; i++) {
     totalProfit = totalProfit + currentMonth[1];
 }
 
-// Add them
-// totalProfit = totalProfit + finances[i]
-
-
-
 // TODO Calculate the average of the changes in Profit/Losses over the entire period.
 
 
