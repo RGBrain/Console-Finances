@@ -1,3 +1,5 @@
+
+
 var finances = [
 ['Jan-2010', 867884],
 ['Feb-2010', 984655],
@@ -86,3 +88,51 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+/* 
+Format of arrays:  
+['Jan-2010', 867884],
+['Feb-2010', 984655],
+...
+*/
+
+// TODO Calculate The total number of months included in the dataset.
+let totalMonths = finances.length;
+
+// ? console.log(totalMonths);
+
+// TODO Calculate The net total amount of Profit/Losses over the entire period.
+let totalProfit = 0;
+// Access values in array
+for (var i = 0; i++; i < finances.length) {
+    totalProfit = totalProfit + finances[i]
+}
+
+
+// Add them
+// totalProfit = totalProfit + finances[i]
+
+
+
+// TODO Calculate the average of the changes in Profit/Losses over the entire period.
+
+
+// TODO track what the total change in profits are from month to month and then find the average. (Total/Number of months)
+
+
+// TODO Find The greatest increase in profits (date and amount) over the entire period.
+
+
+// TODO The greatest decrease in losses (date and amount) over the entire period.
+
+
+/*
+Financial Analysis
+----------------------------
+Total Months: 25
+Total: $2561231
+Average  Change: $-2315.12
+Greatest Increase in Profits: Feb-2012 ($1926159)
+Greatest Decrease in Profits: Sep-2013 ($-2196167)
+Your final code should print the analysis to the console.
+*/
