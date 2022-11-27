@@ -122,11 +122,20 @@ for (j = 0; j < monthlyProfitVariance.length; j++ ) {
 // Calculate average
 let averageVariance = totalVariance / 86;
 
-// console.log(averageVariance);
+// ? console.log(averageVariance);
+// console.log(monthlyProfitVariance);
 
-// TODO Find The greatest increase in profits (date and amount) over the entire period.
-
-
+// Greatest increase in profits (date and amount) over the entire period.
+let currentLargest = 0;
+var largestMonth;
+for (k = 0; k < monthlyProfitVariance.length; k++) {
+    if (monthlyProfitVariance[k] > currentLargest) {
+        currentLargest = monthlyProfitVariance[k];
+        largestMonth = finances[k][0];
+    }
+}
+const greatestIncrease = [largestMonth, currentLargest]
+// console.log(greatestIncrease)
 
 
 // TODO The greatest decrease in losses (date and amount) over the entire period.
