@@ -103,6 +103,30 @@ for (var i = 0; i < finances.length; i++) {
     totalProfit = totalProfit + currentMonth[1];
 }
 
+// // Average of the changes in Profit/Losses over the entire period
+// // Calculate monthly change and store in an Array 
+// var monthlyProfitVariance = [];
+// for (var i = 1; i < finances.length; i++) {
+//     let currentMonthProfit = finances[i][1];
+//     let previousMonthProfit = finances[i-1][1];
+//     let monthlyChange = currentMonthProfit - previousMonthProfit;
+//     monthlyProfitVariance[i]= monthlyChange;
+// }
+
+// // add initial value in index 0 (the difference between 0 and first value in finances array) 
+// monthlyProfitVariance[0] = finances[0][1];
+
+// // Sum all values in the array
+// let totalVariance = 0;
+// for (j = 0; j < monthlyProfitVariance.length; j++ ) {
+//     totalVariance += monthlyProfitVariance[j];
+// }
+
+// // Calculate average
+// let averageVariance = totalVariance / 86;
+
+// TODO Debugging - is £7803.48, or £-2315.12 correct?  Or something else 
+
 // Average of the changes in Profit/Losses over the entire period
 // Calculate monthly change and store in an Array 
 var monthlyProfitVariance = [];
@@ -113,17 +137,17 @@ for (var i = 1; i < finances.length; i++) {
     monthlyProfitVariance[i]= monthlyChange;
 }
 
-// add initial value in index 0 (the difference between 0 and first value in finances array) 
-monthlyProfitVariance[0] = finances[0][1];
-
 // Sum all values in the array
 let totalVariance = 0;
-for (j = 0; j < monthlyProfitVariance.length; j++ ) {
+for (j = 1; j < monthlyProfitVariance.length; j++ ) {
     totalVariance += monthlyProfitVariance[j];
 }
 
 // Calculate average
-let averageVariance = totalVariance / 86;
+let averageVariance = totalVariance / 85;
+
+// TODO End of debugging
+
 
 // Greatest increase in profits over entire period.
 let currentLargestIncrease = 0;
