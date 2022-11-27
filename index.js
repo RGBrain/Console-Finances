@@ -113,22 +113,19 @@ for (var i = 1; i < finances.length; i++) {
     monthlyProfitVariance[i]= monthlyChange;
 }
 
-// add initial value in index 0 (the difference between 0 and first value in finances array) 
-monthlyProfitVariance[0] = finances[0][1];
-
 // Sum all values in the array
 let totalVariance = 0;
-for (j = 0; j < monthlyProfitVariance.length; j++ ) {
+for (j = 1; j < monthlyProfitVariance.length; j++ ) {
     totalVariance += monthlyProfitVariance[j];
 }
 
 // Calculate average
-let averageVariance = totalVariance / 86;
+let averageVariance = totalVariance / 85;
 
 // Greatest increase in profits over entire period.
 let currentLargestIncrease = 0;
-var largestMonth;
-for (k = 0; k < monthlyProfitVariance.length; k++) {
+let largestMonth;
+for (k = 1; k < monthlyProfitVariance.length; k++) {
     if (monthlyProfitVariance[k] > currentLargestIncrease) {
         currentLargestIncrease = monthlyProfitVariance[k];
         largestMonth = finances[k][0];
@@ -138,8 +135,8 @@ const greatestIncrease = [largestMonth, currentLargestIncrease];
 
 // Greatest decrease in profits over entire period.
 let currentLargestDecrease = 0;
-var poorestMonth;
-for (k = 0; k < monthlyProfitVariance.length; k++) {
+let poorestMonth;
+for (k = 1; k < monthlyProfitVariance.length; k++) {
     if (monthlyProfitVariance[k] < currentLargestDecrease) {
         currentLargestDecrease = monthlyProfitVariance[k];
         poorestMonth = finances[k][0];
