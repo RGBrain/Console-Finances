@@ -1,5 +1,9 @@
+/*
+Console Finances
+The following program conducts analsis on an array of sales figures and prints the results to the console.
+*/
 
-
+// Monthly sales figures
 var finances = [
 ['Jan-2010', 867884],
 ['Feb-2010', 984655],
@@ -89,19 +93,19 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
-// Total number of months.
+// Total number of months
 let totalMonths = finances.length;
 
-// Total amount of Profit/Losses over the entire period.
+// Total amount of Profit/Losses over the entire period
 let totalProfit = 0;
 for (var i = 0; i < finances.length; i++) {
     currentMonth = finances[i];
     totalProfit = totalProfit + currentMonth[1];
 }
 
-// Average of the changes in Profit/Losses over the entire period.
+// Average of the changes in Profit/Losses over the entire period
 // Calculate monthly change and store in an Array 
-var monthlyProfitVariance = [] 
+var monthlyProfitVariance = [];
 for (var i = 1; i < finances.length; i++) {
     let currentMonthProfit = finances[i][1];
     let previousMonthProfit = finances[i-1][1];
@@ -109,10 +113,10 @@ for (var i = 1; i < finances.length; i++) {
     monthlyProfitVariance[i]= monthlyChange;
 }
 
-// add initial value in index 0 (the difference between 0 and first value in array) 
+// add initial value in index 0 (the difference between 0 and first value in finances array) 
 monthlyProfitVariance[0] = finances[0][1];
 
-// Sum all values in array
+// Sum all values in the array
 let totalVariance = 0;
 for (j = 0; j < monthlyProfitVariance.length; j++ ) {
     totalVariance += monthlyProfitVariance[j];
@@ -121,10 +125,7 @@ for (j = 0; j < monthlyProfitVariance.length; j++ ) {
 // Calculate average
 let averageVariance = totalVariance / 86;
 
-// ? console.log(averageVariance);
-// console.log(monthlyProfitVariance);
-
-// Greatest increase in profits (date and amount) over the entire period.
+// Greatest increase in profits over entire period.
 let currentLargestIncrease = 0;
 var largestMonth;
 for (k = 0; k < monthlyProfitVariance.length; k++) {
@@ -133,11 +134,9 @@ for (k = 0; k < monthlyProfitVariance.length; k++) {
         largestMonth = finances[k][0];
     }
 }
-const greatestIncrease = [largestMonth, currentLargestIncrease]
-// console.log(greatestIncrease)
+const greatestIncrease = [largestMonth, currentLargestIncrease];
 
-
-// TODO The greatest decrease in losses (date and amount) over the entire period.
+// Greatest decrease in profits over entire period.
 let currentLargestDecrease = 0;
 var poorestMonth;
 for (k = 0; k < monthlyProfitVariance.length; k++) {
@@ -147,20 +146,6 @@ for (k = 0; k < monthlyProfitVariance.length; k++) {
     }
 }
 const greatestDecrease = [poorestMonth, currentLargestDecrease];
-console.log(greatestDecrease)
 
-// Log the Financial Analysis to the console
-console.log("Financial Analysis\n----------------------------\nTotal Months: " + totalMonths + "\nTotal: $" + totalProfit + "\nAverage Change: $" + averageVariance.toFixed(2) + "\nGreatest Increase in Profits: " + greatestIncrease[0] + " (" + greatestIncrease[1] + ")" + "\nGreatest Decrease in Profits: " + greatestDecrease[0] + " (" + greatestDecrease[1] + ")")
-
-
-
-/*
-Financial Analysis
-----------------------------
-Total Months: 25
-Total: $2561231
-Average  Change: $-2315.12
-Greatest Increase in Profits: Feb-2012 ($1926159)
-Greatest Decrease in Profits: Sep-2013 ($-2196167)
-Your final code should print the analysis to the console.
-*/
+// Log the formatted Financial Analysis to the console
+console.log("Financial Analysis\n----------------------------\nTotal Months: " + totalMonths + "\nTotal: $" + totalProfit + "\nAverage Change: $" + averageVariance.toFixed(2) + "\nGreatest Increase in Profits: " + greatestIncrease[0] + " (" + greatestIncrease[1] + ")" + "\nGreatest Decrease in Profits: " + greatestDecrease[0] + " (" + greatestDecrease[1] + ")");
