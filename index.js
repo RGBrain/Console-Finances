@@ -100,9 +100,8 @@ for (var i = 0; i < finances.length; i++) {
 }
 
 // Average of the changes in Profit/Losses over the entire period.
-var monthlyProfitVariance = [] 
-
 // Calculate monthly change and store in an Array 
+var monthlyProfitVariance = [] 
 for (var i = 1; i < finances.length; i++) {
     let currentMonthProfit = finances[i][1];
     let previousMonthProfit = finances[i-1][1];
@@ -126,19 +125,33 @@ let averageVariance = totalVariance / 86;
 // console.log(monthlyProfitVariance);
 
 // Greatest increase in profits (date and amount) over the entire period.
-let currentLargest = 0;
+let currentLargestIncrease = 0;
 var largestMonth;
 for (k = 0; k < monthlyProfitVariance.length; k++) {
-    if (monthlyProfitVariance[k] > currentLargest) {
-        currentLargest = monthlyProfitVariance[k];
+    if (monthlyProfitVariance[k] > currentLargestIncrease) {
+        currentLargestIncrease = monthlyProfitVariance[k];
         largestMonth = finances[k][0];
     }
 }
-const greatestIncrease = [largestMonth, currentLargest]
+const greatestIncrease = [largestMonth, currentLargestIncrease]
 // console.log(greatestIncrease)
 
 
 // TODO The greatest decrease in losses (date and amount) over the entire period.
+let currentLargestDecrease = 0;
+var poorestMonth;
+for (k = 0; k < monthlyProfitVariance.length; k++) {
+    if (monthlyProfitVariance[k] < currentLargestDecrease) {
+        currentLargestDecrease = monthlyProfitVariance[k];
+        poorestMonth = finances[k][0];
+    }
+}
+const greatestDecrease = [poorestMonth, currentLargestDecrease];
+console.log(greatestDecrease)
+
+// Log the Financial Analysis to the console
+console.log("Financial Analysis\n----------------------------\nTotal Months: " + totalMonths + "\nTotal: $" + totalProfit + "\nAverage Change: $" + averageVariance.toFixed(2) + "\nGreatest Increase in Profits: " + greatestIncrease[0] + " (" + greatestIncrease[1] + ")" + "\nGreatest Decrease in Profits: " + greatestDecrease[0] + " (" + greatestDecrease[1] + ")")
+
 
 
 /*
