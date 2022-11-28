@@ -104,7 +104,7 @@ for (var i = 0; i < finances.length; i++) {
 }
 
 // Average of the changes in Profit/Losses over the entire period
-// Calculate monthly change and store in an Array 
+// Calculate monthly changes and store in an Array 
 var monthlyProfitVariance = [];
 for (var i = 1; i < finances.length; i++) {
     let currentMonthProfit = finances[i][1];
@@ -122,7 +122,7 @@ for (j = 1; j < monthlyProfitVariance.length; j++ ) {
 // Calculate average
 let averageVariance = totalVariance / 85;
 
-// Greatest increase in profits over entire period.
+// Greatest increase in profits/month over entire period.
 let currentLargestIncrease = 0;
 let largestMonth;
 for (k = 1; k < monthlyProfitVariance.length; k++) {
@@ -133,7 +133,7 @@ for (k = 1; k < monthlyProfitVariance.length; k++) {
 }
 const greatestIncrease = [largestMonth, currentLargestIncrease];
 
-// Greatest decrease in profits over entire period.
+// Greatest decrease in profits/month over entire period.
 let currentLargestDecrease = 0;
 let poorestMonth;
 for (k = 1; k < monthlyProfitVariance.length; k++) {
