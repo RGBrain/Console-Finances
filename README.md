@@ -8,15 +8,15 @@ This activity presents a real-world situation: creating code for analyzing the f
 
 ## Installation
 
-No need to install, simply visit:  **WEBPAGE**
+No need to install, simply visit:  **https://rgbrain.github.io/Console-Finances/**
 
 ## Usage
 
-Having visited ___________________, right click on anywhere on the webpage, and choose inspect element (Chrome/Mozilla Firefox).  Go to the 'Console' tab and you will see the Financial Analysis.
+Having visited https://rgbrain.github.io/Console-Finances/ right click on anywhere on the webpage and choose 'Inspect' or 'Inspect Element'.  Select the 'Console' tab and you will see the Financial Analysis, as below:
 
 **SCREENSHOT**
 
-   ![alt text](images/screenshot.png)
+   ![Project Screenshot](images/screenshot.png)
 
 
 ## Credits
